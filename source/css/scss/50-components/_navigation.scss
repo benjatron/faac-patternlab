@@ -1,0 +1,51 @@
+.c-nav-flag {
+  @include grid-column(5);
+  @include grid-shift(19);
+
+  background-color: $v-color__alpine;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 10;
+
+  @include skew($side: left, $bg: $v-color__alpine, $deg: 45deg, $left: -1.875rem, $width: 3.75rem);
+}
+
+.c-nav-flag__link {
+  color: $v-color__white;
+  font-weight: $heading-font-weight;
+  text-transform: $heading-text-transform;
+  letter-spacing: $heading-letters-spacing;
+}
+
+.c-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.c-nav-links__item {
+  padding: .6875rem;
+  font-weight: $heading-font-weight;
+  text-transform: $heading-text-transform;
+  letter-spacing: $heading-letters-spacing;
+}
+
+.c-nav-links__anchor {
+  color: $v-color__white;
+}
+
+.c-nav-links__button {
+  background: transparent;
+  padding: .6875rem;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  font-weight: $heading-font-weight;
+  text-transform: $heading-text-transform;
+  letter-spacing: $heading-letters-spacing;
+}
+
+.c-nav-links__icon {
+  color: $v-color__white;
+  padding: 1.875rem;
+}

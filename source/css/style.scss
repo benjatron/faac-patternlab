@@ -1,0 +1,132 @@
+/*
+ * FAAC Incorporated Pattern Library - Table of Contents
+ *
+ * LIBRARIES
+ * Redacted Font..........Keep your wireframes free of distracting Lorem Ipsum
+ *                        (https://github.com/christiannaths/Redacted-Font)
+ * Bourbon................A simple and lightweight mixin library for Sass.
+ *                        (http://bourbon.io/)
+ * Neat...................A grid system built on top of Bourbon.
+ *                        (http://neat.bourbon.io/)
+ * Hamburgers.............Tasty CSS-animated hamburgers.
+ *                        (https://jonsuh.com/hamburgers/)
+ * Hover..................Hover effects to be applied to links, buttons, 
+ *                        logos, SVG, featured images and so on.
+ *                        (https://ianlunn.github.io/Hover/)
+ * 
+ * RESETS
+ * Sanitize...............Adapted from Jonathan Neal's sanitize.css
+ * 
+ * SETTINGS
+ * Constants..............Baseline settings for use throughout the project
+ * Mixins.................Recipes to use with other styles
+ *
+ * ELEMENTS
+ *
+ * COMPONENTS
+ *
+ * MODULES
+ * 
+ * TRUMPS
+ * Lint...................Some obnoxious styles to make linting HTML a little 
+ *                        bit easier.
+ * Debug..................Styles for debugging purposes. Comment out the import
+ *                        before production, please. :)
+ *
+ */
+
+
+
+
+/*
+ * --------------------------------
+ * #LIBRARIES
+ * --------------------------------
+ */
+
+@import 'scss/10-libraries/redacted/redacted';
+
+@import 'scss/10-libraries/bourbon/bourbon';
+@import 'scss/10-libraries/neat/neat';
+
+@import 'scss/10-libraries/hamburgers/hamburgers';
+
+@import 'scss/10-libraries/hover/options';
+@import 'scss/10-libraries/hover/mixins';
+@import 'scss/10-libraries/hover/hacks';
+@import 'scss/10-libraries/hover/effects/background-transitions/fade';
+
+
+/*
+ * --------------------------------
+ * #RESETS
+ * --------------------------------
+ */
+
+@import 'scss/20-reset/sanitize';
+
+
+/*
+ * --------------------------------
+ * #SETTINGS
+ * --------------------------------
+ */
+
+// These must be imported before any global styles are set
+@import 'scss/30-settings/constants';
+@import 'scss/30-settings/mixins';
+
+// Sets global styles for other variables and basic document settings
+@import 'scss/30-settings/globals';
+
+
+/*
+ * --------------------------------
+ * #ELEMENTS
+ * --------------------------------
+ */
+
+@import 'scss/40-elements/content';
+@import 'scss/40-elements/forms';
+@import 'scss/40-elements/inline';
+@import 'scss/40-elements/media';
+@import 'scss/40-elements/table';
+@import 'scss/40-elements/text';
+
+
+/*
+ * --------------------------------
+ * #COMPONENTS
+ * --------------------------------
+ */
+
+@import 'scss/50-components/cards';
+@import 'scss/50-components/content';
+@import 'scss/50-components/feedback';
+@import 'scss/50-components/media';
+@import 'scss/50-components/navigation';
+@import 'scss/50-components/tables';
+@import 'scss/50-components/video';
+
+/*
+ * --------------------------------
+ * #MODULES
+ * --------------------------------
+ */
+
+@import 'scss/60-modules/articles';
+@import 'scss/60-modules/features';
+@import 'scss/60-modules/galleries';
+@import 'scss/60-modules/navbars';
+@import 'scss/60-modules/sidebars';
+@import 'scss/60-modules/sliders';
+
+
+ /*
+  * --------------------------------
+  * #TRUMPS
+  * --------------------------------
+  */
+
+// @import 'scss/70-trumps/linting';
+@import 'scss/70-trumps/debug';

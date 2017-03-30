@@ -1,0 +1,64 @@
+// Variables here are prefixed with a 'v-' so that references in other files can be 
+// differentiated from CSS classes, function names, etc.
+
+// Breakpoints
+$v-breakpoint--small : 36rem;   // 576px
+$v-breakpoint--medium : 54rem;  // 864px
+$v-breakpoint--large : 72rem;   // 1152px
+
+
+// Global FAAC Colors
+$v-color__abbey : #4b5457;
+$v-color__alpine : #be9732;
+$v-color__gamboge : #e4a811;
+$v-color__gray : #7b7a7a;
+$v-color__school-bus-yellow : #fedd00;
+
+
+// FAAC Commercial colors
+$v-color__cinnabar : #e15336;
+$v-color__koromiko : #ffbd5a;
+$v-color__big-stone : #1a304b;
+
+
+// FAAC Military colors
+$v-color__yellow-metal : #706439;
+$v-color__iroko : #49361f;
+$v-color__whiskey : #d4ab6f;
+
+
+// MILO Range Colors
+$v-color__astronaut : #174770;
+$v-color__tory-blue : #0f4eb6;
+$v-color__blue-ribbon : #005eff;
+
+
+// RTI colors
+$v-color__blaze-orange : #ff6600;
+$v-color__malibu : #6699ff;
+$v-color__pigment-indigo : #330099;
+
+
+// Neutral Colors
+$v-color__black : #000000;
+$v-color__mine-shaft : #333333;
+$v-color__dove-gray : #666666;
+$v-color__dusty-gray: #999999;
+$v-color__silver: #cccccc;
+$v-color__white : #ffffff;
+
+
+// Utility Colors
+$v-utility__positive : #1abc9c;
+$v-utility__positive--subtle : #d0ecd7;
+
+$v-utility__neutral : #3498db;
+$v-utility__neutral--subtle : #85c1e9;
+
+$v-utility__negative : #e74c3c;
+$v-utility__negative--subtle : #f5b7b1;
+
+
+// Font Families
+$v-font__proxima-nova : proxima-nova, sans-serif;
+$v-font__industry : industry, sans-serif;

@@ -1,4 +1,77 @@
 {
+  "elements" : {
+    "content" : {
+    },
+    "forms" : {
+    },
+    "inline" : {
+    },
+    "media" : {
+      "logo" : {
+        "src" : "holder.js/200x50?text=Navbar Logo \n 4:1&auto=yes",
+        "class" : ""
+      },
+      "navIcon" : {
+        "src" : "../../images/icons/search.svg"
+      }
+    },
+    "table" : {
+    },
+    "text" : {
+    }
+  },
+  "components" : {
+    "cards" : {
+    },
+    "content" : {
+    },
+    "feedback" : {
+    },
+    "media" : {
+    },
+    "navigation" : {
+      "navFlag" : {
+        "imgSrc" : "holder.js/200x50?text=Navbar Flag Logo \n 4:1&auto=yes"
+      }
+    },
+    "tables" : {
+    },
+    "video" : {
+    }
+  },
+  "modules" : {
+    "articles" : {
+    },
+    "features" : {
+    },
+    "galleries" : {
+    },
+    "navbars" : {
+    },
+    "sidebars" : {
+    },
+    "sliders" : {
+    }
+  },
+  "templates" : {
+    "homepage" : {
+    },
+    "simulators" : {
+    },
+    "solutions" : {
+    },
+    "category" : {
+    },
+    "content" : {
+    },
+    "divisions" : {
+    }
+  },
+
+
+
+
+
   "key": "value",
   "key2": "use this for variables you want to load globally",
   "title": "Nullizzle shizznit velizzle, hizzle, suscipit own yo', gravida vizzle, arcu.",
