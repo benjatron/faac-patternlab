@@ -21,59 +21,11 @@
 		"oAP": "\/.eslintrc",
 		"oF": 0
 		},
-	"\/.github\/CONTRIBUTING.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
+	"\/.github": {
+		"ft": 65536,
 		"oA": 1,
-		"oAP": "\/.github\/CONTRIBUTING.md",
-		"oF": 1,
-		"oFM": 9,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
-	"\/.github\/ISSUE_TEMPLATE.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 1,
-		"oAP": "\/.github\/ISSUE_TEMPLATE.md",
-		"oF": 1,
-		"oFM": 9,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
-	"\/.github\/PULL_REQUEST_TEMPLATE.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 1,
-		"oAP": "\/.github\/PULL_REQUEST_TEMPLATE.md",
-		"oF": 1,
-		"oFM": 9,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
+		"oAP": "\/build\/.github",
+		"oF": 0
 		},
 	"\/.gitignore": {
 		"ft": 8192,
@@ -6543,7 +6495,7 @@
 			}
 		],
 	"previewPathAddition": "\/public",
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules, \/public, \/scripts",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules, \/public, \/scripts, \/.github",
 	"sourceFolderName": "source",
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
