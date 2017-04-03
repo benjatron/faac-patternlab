@@ -1,6 +1,4 @@
 .c-nav-flag {
-  @include grid-column(5);
-  @include grid-shift(19);
 
   background-color: $v-color__alpine;
   display: flex;

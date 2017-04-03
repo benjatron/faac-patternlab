@@ -6,41 +6,43 @@
 #sg-patterns {
   box-sizing: border-box !important;
   max-width: 100%;
-  padding: 0 0.5em; }
+  padding: 0 0.5rem; }
 
 .demo-animate {
   background: #ddd;
-  padding: 1em;
-  margin-bottom: 1em;
+  padding: 1rem;
+  margin-bottom: 1rem;
   text-align: center;
-  border-radius: 8px;
+  border-radius: .5rem;
   cursor: pointer; }
 
 .sg-colors {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important; }
 
 .sg-colors li {
   -webkit-box-flex: 1;
-      -ms-flex: auto;
-          flex: auto;
-  padding: 0.3em;
-  margin: 0 0.5em 0.5em 0;
-  min-width: 6.25%;
-  max-width: 12.5%;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+      -ms-flex: 1 0 10rem;
+          flex: 1 0 10rem;
+  padding: 0.3rem;
+  margin: 0 0.5rem 0.5em 0;
+  min-width: 10%;
+  max-width: 20%;
+  border: .125rem solid #ddd;
+  border-radius: .5rem;
   background-color: #fff; }
 
 .sg-swatch {
   display: block;
-  height: 4em;
-  margin-bottom: 0.3em;
-  border-radius: 5px; }
+  height: 4rem;
+  margin-bottom: 0.3rem;
+  border-radius: .25rem; }
 
 .sg-label {
   font-size: 0.8em; }

@@ -6,8 +6,6 @@
  *                        (https://github.com/christiannaths/Redacted-Font)
  * Bourbon................A simple and lightweight mixin library for Sass.
  *                        (http://bourbon.io/)
- * Neat...................A grid system built on top of Bourbon.
- *                        (http://neat.bourbon.io/)
  * Hamburgers.............Tasty CSS-animated hamburgers.
  *                        (https://jonsuh.com/hamburgers/)
  * Hover..................Hover effects to be applied to links, buttons, 
@@ -47,7 +45,6 @@
 @import 'scss/10-libraries/redacted/redacted';
 
 @import 'scss/10-libraries/bourbon/bourbon';
-@import 'scss/10-libraries/neat/neat';
 
 @import 'scss/10-libraries/hamburgers/hamburgers';
 
@@ -114,12 +111,12 @@
  * --------------------------------
  */
 
-@import 'scss/60-modules/articles';
-@import 'scss/60-modules/features';
-@import 'scss/60-modules/galleries';
-@import 'scss/60-modules/navbars';
-@import 'scss/60-modules/sidebars';
+@import 'scss/60-modules/universal';
 @import 'scss/60-modules/sliders';
+@import 'scss/60-modules/general';
+@import 'scss/60-modules/options';
+@import 'scss/60-modules/divisions';
+@import 'scss/60-modules/promotions';
 
 
  /*

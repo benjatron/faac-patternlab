@@ -2,9 +2,9 @@ $v-font__redacted-regular : 'Redacted';
 $v-font__redacted-script : 'Redacted Script';
 
 .debug-container {
-  @include grid-visual;
+
 }
 
 .debug {
-  font-family: $v-font__redacted-script;
+  // font-family: $v-font__redacted-regular;
 }
