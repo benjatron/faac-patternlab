@@ -1,3 +1,0 @@
----
-title: Homepage (1)
----

@@ -3,18 +3,22 @@
  * styles for grids, animations, color swatches, etc.
  * These styles will not be your production CSS.
  */
+
 #sg-patterns {
+  -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
   max-width: 100%;
-  padding: 0 0.5rem; }
+  padding: 0 0.5em;
+}
 
 .demo-animate {
   background: #ddd;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 1em;
+  margin-bottom: 1em;
   text-align: center;
-  border-radius: .5rem;
-  cursor: pointer; }
+  border-radius: 8px;
+  cursor: pointer;
+}
 
 .sg-colors {
   display: -webkit-box;
@@ -24,33 +28,38 @@
       flex-wrap: wrap;
   list-style: none !important;
   padding: 0 !important;
-  margin: 0 !important; }
-
+  margin: 0 !important;
+}
 .sg-colors li {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 10rem;
-          flex: 1 0 10rem;
-  padding: 0.3rem;
-  margin: 0 0.5rem 0.5em 0;
-  min-width: 10%;
-  max-width: 20%;
-  border: .125rem solid #ddd;
-  border-radius: .5rem;
-  background-color: #fff; }
+      -ms-flex: auto;
+          flex: auto;
+  padding: 0.3em;
+  margin: 0 0.5em 0.5em 0;
+  min-width: 5em;
+  max-width: 14em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
 
 .sg-swatch {
   display: block;
-  height: 4rem;
-  margin-bottom: 0.3rem;
-  border-radius: .25rem; }
+  height: 4em;
+  margin-bottom: 0.3em;
+  border-radius: 5px;
+}
 
 .sg-label {
-  font-size: 0.8em; }
+  font-size: 90%;
+  line-height: 1;
+}
 
 #atoms-logo-reversed .sg-pattern-example {
-  background: #444444;
-  display: inline-block; }
+	background: #444444;
+	display: inline-block;
+}
 
 #molecules-logo-footer-link .sg-pattern-example {
-  background: #444444;
-  display: inline-block; }
+	background: #444444;
+	display: inline-block;
+}

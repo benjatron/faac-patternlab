@@ -1,8 +1,5 @@
-node_modules/
 .DS_Store
-patternlab.json
-.sass-cache/*
-/sass-cache
-Thumbs.db
-.idea/
-public
+export/*
+public/*
+source/styleguide/*
+vendor/*
