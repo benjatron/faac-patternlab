@@ -1,0 +1,68 @@
+// The 'Grid'
+@mixin container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.125rem;
+}
+
+@mixin item {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 10rem;
+  margin: 0.125em;
+}
+
+
+
+
+// Fade Effects
+@mixin fade {
+  @include hacks();
+  overflow: hidden;
+  @include prefixed(transition-duration, $mediumDuration);
+  @include prefixed(transition-property, "color, background-color");
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba( $v-color__school-bus-yellow, .2 );
+  }
+}
+
+@mixin fade--border {
+  @include hacks();
+  overflow: hidden;
+  @include prefixed(transition-duration, $mediumDuration);
+  @include prefixed(transition-property, "color, background-color");
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba( $v-color__school-bus-yellow, .2 );
+    border: .0625rem solid rgba( $v-color__white, .4 );
+  }
+}
+
+@mixin skew($side: right, $deg: -20deg, $right: -15px, $left: -15px, $width: 30px, $bg: #fff) {
+    position: relative;
+
+    &:before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        @if $side == right {
+            right: $right;
+        }
+        @else if $side == left {
+            left: $left;
+        }
+
+        display: block;
+        width: $width;
+        background: $bg;
+        transform: skew($deg);
+    }
+}

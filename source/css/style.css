@@ -1,1882 +1,701 @@
 /*
-                                                ,,            ,,                          ,,
- .M"""bgd mm                                    db          `7MM        mm         mm   `7MM                                    OO OO OO
-,MI    "Y MM                                                  MM        MM         MM     MM                                    88 88 88
-`MMb.   mmMMmm ,pW"Wq.`7MMpdMAo.     `7Mb,od8 `7MM  .P"Ybmmm  MMpMMMb.mmMMmm     mmMMmm   MMpMMMb.  .gP"Ya `7Mb,od8 .gP"Ya      || || ||
-  `YMMNq. MM  6W'   `Wb MM   `Wb       MM' "'   MM :MI  I8    MM    MM  MM         MM     MM    MM ,M'   Yb  MM' "',M'   Yb     || || ||
-.     `MM MM  8M     M8 MM    M8       MM       MM  WmmmP"    MM    MM  MM         MM     MM    MM 8M""""""  MM    8M""""""     `' `' `'
-Mb     dM MM  YA.   ,A9 MM   ,AP       MM       MM 8M         MM    MM  MM         MM     MM    MM YM.    ,  MM    YM.    ,     ,, ,, ,,
-P"Ybmmd"  `Mbmo`Ybmd9'  MMbmmd'      .JMML.   .JMML.YMMMMMb .JMML  JMML.`Mbmo      `Mbmo.JMML  JMML.`Mbmmd'.JMML.   `Mbmmd'     db db db
-                        MM                         6'     dP
-                      .JMML.                       Ybmmmd'
-
-Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
-You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
-So please don't use these styles. They're just here to put together the demo, and nothing more.
-They're intentionally gray, boring, and crappy because you're supposed to do this stuff yourself.
-
-Atomic design is philosophically complimentary with these CSS approaches:
-
-* SMACSS by Jonathan Snook http://smacss.com/
-* OOCSS by Nicole Sullivan http://oocss.org/
-* BEM CSS Methology : http://bem.info/method/
-* CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
-
-So feel free to use any of these approaches. Or don't. It's totally up to you.
-
-*/
-/*------------------------------------*\
-    $TABLE OF CONTENTS
-    based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
-\*------------------------------------*/
-/**
- * ABSTRACTS..............Declarations of Sass variables and mixins
- * Mixins.................Mixin styles that are included in the site
- * Variables..............Variables for styles that are used in the site
+ * FAAC Incorporated Pattern Library - Table of Contents
  *
- * BASE...................Base/reset styles for certain elements
- * Animation..............Animation base styles
- * Forms..................Form field base styles
- * Global Classes.........Base styles used across the entirety of the site
- * Headings...............Base styles for headings (h1, h2, etc.)
- * Links..................Base styles for links
- * Lists..................Base styles lists
- * Main...................Base styles for main section
- * Media..................Base styles for various media (videos, iframes, etc.)
- * Reset..................Reset base styles (i.e. Display block on certain elements)
- * Tables.................Base styles for tables
- * Text...................Base styles for text elements
+ * LIBRARIES
+ * Redacted Font..........Keep your wireframes free of distracting Lorem Ipsum
+ *                        (https://github.com/christiannaths/Redacted-Font)
+ * Bourbon................A simple and lightweight mixin library for Sass.
+ *                        (http://bourbon.io/)
+ * Hamburgers.............Tasty CSS-animated hamburgers.
+ *                        (https://jonsuh.com/hamburgers/)
+ * Hover..................Hover effects to be applied to links, buttons, 
+ *                        logos, SVG, featured images and so on.
+ *                        (https://ianlunn.github.io/Hover/)
+ * 
+ * RESETS
+ * Sanitize...............Adapted from Jonathan Neal's sanitize.css
+ * 
+ * SETTINGS
+ * Constants..............Baseline settings for use throughout the project
+ * Mixins.................Recipes to use with other styles
  *
- * COMPONENTS.............Styles for certain components
- * Accordion..............Styles for accordion components
- * Article................Styles for article components
- * Blocks.................Styles for block components
- * Buttons................Styles for button components
- * Carousels..............Styles for carousels
- * Comments...............Styles for comments component
- * Footer.................Styles for the footer component
- * Forms..................Styles for form components
- * Header.................Styles for header component
- * Icons..................Styles for icons
- * Lists..................Styles for types of lists
- * Main...................Styles for main section
- * Messaging..............Styles for alerts/messaging components
- * Nav....................Styles for navigation components
- * Sections...............Styles for section components
- * Tabs...................Styles for tabs
- * Text...................Styles for text components
- * Tooltip................Styles for tooltips
-
+ * ELEMENTS
  *
- * LAYOUT.................Styles that affect the site's general layout
- * Layout.................Layout styles
+ * COMPONENTS
  *
- * UTILITIES..............Styles that require a utility class
- *
- */
-/*------------------------------------*\
-    $ABSTRACTS
-\*------------------------------------*/
-/*------------------------------------*\
-    #MIXINS
-\*------------------------------------*/
-/** CSS Transition
- *	Usage: @include transition(width,0.3s,ease-out);
- */
-/** Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
- *	Usage: @include font-size(1, large);
- */
-/*------------------------------------*\
-    #VARIABLES
-\*------------------------------------*/
-/*------------------------------------*\
-    #COLORS
-\*------------------------------------*/
-/*
- * 1) Color variables involve a two-tier system to keep colors in sync. The
- *    first tier defines the brand and neutral colors, and the second tier
- *    defines the application of those colors.
- */
-/*
- * Brand Colors
- * 1) Brand color variables use English names to define colors to make palettes easier to
- *    identify. Names are generated using this tool: http://chir.ag/projects/name-that-color/
- * 2) Brand color variables should typically not be used directly in Sass partials. Instead, use
- *    second-tier application colors.
+ * MODULES
+ * 
+ * TRUMPS
+ * Lint...................Some obnoxious styles to make linting HTML a little 
+ *                        bit easier.
+ * Debug..................Styles for debugging purposes. Comment out the import
+ *                        before production, please. :)
  *
  */
 /*
- * Neutral Colors
- * 1) Neutral color variables use a numbered system to define variables for better maintainability.
- *    "$color-gray-10" means "10% gray", which is a gray closer to white than to black. For more info
- *    read https://medium.com/eightshapes-llc/color-in-design-systems-a1c80f65fa3#.brevrq67p
+ * --------------------------------
+ * #LIBRARIES
+ * --------------------------------
  */
-/**
- * Utility Colors
- * 1) Utility colors are colors used to provide feedback, such as alert messages,
- * form validation, etc.
- */
-/*
- * Text Colors
- * 1) These are non-linked text colors, such as body copy.
- */
-/*
- * Heading Colors
- * 1) These are non-linked heading colors, such as h2, h3, etc.
- */
-/*
- * Text Link Colors
- * 1) These are for linked text, such as a link found within an article,
- *    navigation link, footer link, etc.
- */
-/*
- * Border Colors
- * 1) Border colors are used as decoration or dividers, such as as a seperator
- *    for navigation items, block borders, etc.
- */
-/*------------------------------------*\
-    #TYPOGRAPHY
-\*------------------------------------*/
-/*------------------------------------*\
-    #LAYOUT
-\*------------------------------------*/
-/**
- * Spacing Defaults
- */
-/*------------------------------------*\
-    #BORDERS
-\*------------------------------------*/
-/**
- * Border Width
- */
-/**
- * Border Radius
- */
-/*------------------------------------*\
-    #ANIMATION
-\*------------------------------------*/
-/**
- * Animation Duration
- */
-/**
- * Animation Easing
- */
-/*------------------------------------*\
-    #BREAKPOINTS
-\*------------------------------------*/
-/**
- * Breakpoints
- */
-/*------------------------------------*\
-    $BASE
-\*------------------------------------*/
-/*------------------------------------*\
-    #BODY
-\*------------------------------------*/
-/**
- * Body base styles
- */
-body {
-  background: #fff;
-  color: #808080;
-  font: 100%/1.5 "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-  -webkit-text-size-adjust: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column; }
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on March 2, 2013 */
+@font-face {
+  font-family: 'redactedregular';
+  src: url("scss/10-libraries/redacted/redacted-regular.eot");
+  src: url("scss/10-libraries/redacted/redacted-regular.eot?#iefix") format("embedded-opentype"), url("scss/10-libraries/redacted/redacted-regular.woff2") format("woff2"), url("scss/10-libraries/redacted/redacted-regular.woff") format("woff"), url("scss/10-libraries/redacted/redacted-regular.ttf") format("truetype"), url("scss/10-libraries/redacted/redacted-regular.svg#redactedregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
-/*------------------------------------*\
-    #ANIMATION
-\*------------------------------------*/
-/**
- * Fade Animation
- */
-.animate-fade {
-  -webkit-transition: opacity 0.3s ease-out;
-  -moz-transition: opacity 0.3s ease-out;
-  -ms-transition: opacity 0.3s ease-out;
-  -o-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out; }
-  .animate-fade:hover {
-    opacity: 0; }
+@font-face {
+  font-family: 'redacted_scriptbold';
+  src: url("scss/10-libraries/redacted/redacted-script-bold.eot");
+  src: url("scss/10-libraries/redacted/redacted-script-bold.eot?#iefix") format("embedded-opentype"), url("scss/10-libraries/redacted/redacted-script-bold.woff2") format("woff2"), url("scss/10-libraries/redacted/redacted-script-bold.woff") format("woff"), url("scss/10-libraries/redacted/redacted-script-bold.ttf") format("truetype"), url("scss/10-libraries/redacted/redacted-script-bold.svg#redacted_scriptbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 
-/*------------------------------------*\
-    #FORMS
-\*------------------------------------*/
-/**
- * Fieldset base styles
+@font-face {
+  font-family: 'redacted_scriptlight';
+  src: url("scss/10-libraries/redacted/redacted-script-light.eot");
+  src: url("scss/10-libraries/redacted/redacted-script-light.eot?#iefix") format("embedded-opentype"), url("scss/10-libraries/redacted/redacted-script-light.woff2") format("woff2"), url("scss/10-libraries/redacted/redacted-script-light.woff") format("woff"), url("scss/10-libraries/redacted/redacted-script-light.ttf") format("truetype"), url("scss/10-libraries/redacted/redacted-script-light.svg#redacted_scriptlight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'redacted_scriptregular';
+  src: url("scss/10-libraries/redacted/redacted-script-regular.eot");
+  src: url("scss/10-libraries/redacted/redacted-script-regular.eot?#iefix") format("embedded-opentype"), url("scss/10-libraries/redacted/redacted-script-regular.woff2") format("woff2"), url("scss/10-libraries/redacted/redacted-script-regular.woff") format("woff"), url("scss/10-libraries/redacted/redacted-script-regular.ttf") format("truetype"), url("scss/10-libraries/redacted/redacted-script-regular.svg#redacted_scriptregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
  */
-fieldset {
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
   border: 0;
-  padding: 0;
-  margin: 0; }
-
-/**
- * Label base styles
- */
-label {
-  display: block;
-  padding-bottom: 0.2rem;
-  font-weight: bold; }
-
-/**
- * Form button, input, select, and text area base styles
- * 1) Zero out margin and inherit font styles
- */
-button, input, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-  margin: 0; }
-
-/**
- * Input and text area base styles
- * 1) Width entire container, gray border, padding
- */
-input, textarea {
-  width: 100%;
-  border: 1px solid #a5a5a5;
-  border-radius: 6px;
-  padding: 1rem; }
-
-/**
- * Input areas base styles
- * 1) Get rid of webkit appearance of these areas
- */
-input[type=text], input[type=search], input[type=url], input[type=number], textarea {
-  -webkit-appearance: none; }
-
-/**
- * Button/Submit button base styles
- */
-button, input[type="submit"] {
-  padding: 0.5em;
-  background: #444444;
-  border: 1px solid #808080;
-  cursor: pointer; }
-
-/**
- * Checkboxes/Radio button base styles
- */
-input[type="checkbox"],
-input[type="radio"] {
-  width: auto;
-  margin-right: 0.3em; }
-
-/**
- * Search cancel button and search decoration webkit appearance none
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-/*------------------------------------*\
-    #GLOBAL CLASSES
-\*------------------------------------*/
-/**
- * Clearfix
- */
-.cf {
-  *zoom: 1; }
-
-/**
- * Clearfix pseudo-elements
- */
-.cf:before, .cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */ }
-
-.cf:after {
-  clear: both; }
-
-/**
- * Completely remove from the flow and screen readers.
- */
-.is-hidden {
-  display: none !important;
-  visibility: hidden !important; }
-
-/**
- * Completely remove from the flow but leave available to screen readers.
- */
-.is-vishidden {
-  position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px); }
-
-/**
- * Text align right
- */
-.align-right {
-  text-align: right; }
-
-/**
- * Text align center
- */
-.align-center {
-  text-align: center; }
-
-/**
- * Text Align left
- */
-.align-left {
-  text-align: left; }
-
-/**
- * Hide on small screens
- */
-@media all and (max-width: 46.8em) {
-  .hide-small {
-    display: none; } }
-
-/**
- * Hide on medium screens
- */
-@media all and (min-width: 46.8em) and (max-width: 50em) {
-  .hide-med {
-    display: none; } }
-
-/**
- * Hide on large screens
- */
-@media all and (min-width: 50em) {
-  .hide-large {
-    display: none; } }
-
-/**
- * Show valid text color
- */
-.valid {
-  color: #03804d; }
-
-/**
- * Show error text color
- */
-.error {
-  color: #b12a0b; }
-
-/**
- * Show warning text color
- */
-.warning {
-  color: #a59b15; }
-
-/**
- * Show informational text color
- */
-.information {
-  color: #0192d0; }
-
-/**
- * Display secondary font family
- */
-.font-secondary {
-  font-family: Georgia, Times, "Times New Roman", serif; }
-
-/*------------------------------------*\
-    #HEADINGS
-\*------------------------------------*/
-/**
- * Heading 1
- */
-h1 {
-  font-size: 3rem;
-  line-height: 1.2; }
-
-/**
- * Heading 2
- */
-h2 {
-  line-height: 1.2; }
-
-/**
- * Heading 3
- */
-h3 {
-  line-height: 1.2; }
-
-/**
- * Heading 4
- */
-/**
- * Heading 5
- */
-/**
- * Heading 6
- */
-/**
- * Subheading
- */
-.subheading {
-  font-family: Georgia, Times, "Times New Roman", serif;
-  font-weight: normal; }
-
-/*------------------------------------*\
-    #LINKS
-\*------------------------------------*/
-/**
- * Links
- */
-a {
-  color: #808080;
-  text-decoration: none;
-  outline: 0;
-  transition: all 0.2s ease; }
-  a:hover, a:focus {
-    color: #444444; }
-
-/*------------------------------------*\
-    #LINKS
-\*------------------------------------*/
-/**
- * Ordered/Unordered list base styles
- */
-ol, ul {
   margin: 0;
-  padding: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 0.7; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+/*
+   * 3DX
+   */
+.hamburger--3dx .hamburger-box {
+  perspective: 80px; }
+
+.hamburger--3dx .hamburger-inner {
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .hamburger--3dx .hamburger-inner::before, .hamburger--3dx .hamburger-inner::after {
+    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.hamburger--3dx.is-active .hamburger-inner {
+  background-color: transparent;
+  transform: rotateY(180deg); }
+  .hamburger--3dx.is-active .hamburger-inner::before {
+    transform: translate3d(0, 10px, 0) rotate(45deg); }
+  .hamburger--3dx.is-active .hamburger-inner::after {
+    transform: translate3d(0, -10px, 0) rotate(-45deg); }
+
+/*
+   * 3DX Reverse
+   */
+.hamburger--3dx-r .hamburger-box {
+  perspective: 80px; }
+
+.hamburger--3dx-r .hamburger-inner {
+  transition: transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .hamburger--3dx-r .hamburger-inner::before, .hamburger--3dx-r .hamburger-inner::after {
+    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.hamburger--3dx-r.is-active .hamburger-inner {
+  background-color: transparent;
+  transform: rotateY(-180deg); }
+  .hamburger--3dx-r.is-active .hamburger-inner::before {
+    transform: translate3d(0, 10px, 0) rotate(45deg); }
+  .hamburger--3dx-r.is-active .hamburger-inner::after {
+    transform: translate3d(0, -10px, 0) rotate(-45deg); }
+
+/* Fade */
+/*
+ * --------------------------------
+ * #RESETS
+ * --------------------------------
+ */
+/* Sanitize styles, based on sanitize.css v5.0.0 | CC0 License | 
+ * github.com/jonathantneal/sanitize.css */
+*,
+::before,
+::after {
+  background-repeat: no-repeat;
+  box-sizing: inherit; }
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit; }
+
+html {
+  box-sizing: border-box;
+  cursor: default;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block; }
+
+body {
+  margin: 0; }
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0; }
+
+figcaption,
+figure,
+main {
+  display: block; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+nav ol,
+nav ul {
   list-style: none; }
 
-/**
- * Definition list base styles
- */
-dl {
-  overflow: hidden;
-  margin: 0 0 1em; }
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em; }
 
-/**
- * Terms/Names base styles
- */
-dt {
-  font-weight: bold; }
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects; }
 
-/**
- * Definition list description base styles
- */
-dd {
-  margin-left: 0; }
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
 
-/*------------------------------------*\
-    #MAIN
-\*------------------------------------*/
-/**
- * Main content area
- */
-[role=main] {
-  flex: 1; }
+b,
+strong {
+  font-weight: inherit; }
 
-/*------------------------------------*\
-    #MEDIA ELEMENTS
-\*------------------------------------*/
-/**
- * Make media elements responsive
- */
-img, video, object {
-  max-width: 100%;
-  height: auto; }
+b,
+strong {
+  font-weight: bolder; }
 
-/**
- * Iframe base styles
- */
-iframe {
-  margin-bottom: 1em; }
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
 
-/**
- * Figure base styles
- */
-figure {
-  margin-bottom: 1em;
-  /**
-   * Figure image base styles
-   */ }
-  figure img {
-    margin-bottom: 0.5em; }
-
-/**
- * Figure caption base styles
- */
-figcaption {
+dfn {
   font-style: italic; }
 
-/*------------------------------------*\
-    #RESET
-\*------------------------------------*/
-/**
- * Use border box on all elements
- */
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+mark {
+  background-color: #ffff00;
+  color: #000000; }
 
-/**
- * Zero out margin and padding on most elements as base style
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -.25em; }
+
+sup {
+  top: -.5em; }
+
+::-moz-selection {
+  background-color: #b3d4fc;
+  color: #000000;
+  text-shadow: none; }
+
+::selection {
+  background-color: #b3d4fc;
+  color: #000000;
+  text-shadow: none; }
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+audio,
+video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+img {
+  border-style: none; }
+
+svg {
+  fill: currentColor; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+table {
+  border-collapse: collapse; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0; }
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+button,
+input {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+
+progress {
+  display: inline-block;
+  vertical-align: baseline; }
+
+textarea {
+  overflow: auto;
+  resize: vertical; }
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+
+details,
+menu {
+  display: block; }
+
+summary {
+  display: list-item; }
+
+canvas {
+  display: inline-block; }
+
+template {
+  display: none; }
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
+
+[hidden] {
+  display: none; }
+
+[aria-busy="true"] {
+  cursor: progress; }
+
+[aria-controls] {
+  cursor: pointer; }
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  display: inherit;
+  position: absolute; }
+
+[aria-disabled] {
+  cursor: default; }
+
+/*
+ * --------------------------------
+ * #SETTINGS
+ * --------------------------------
  */
-html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, legend, label, table, header, footer, nav, section, figure {
+html {
+  box-sizing: border-box;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body {
+  color: #7b7a7a;
+  font-family: proxima-nova, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  height: 100%; }
+
+/*
+ * --------------------------------
+ * #ELEMENTS
+ * --------------------------------
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: industry, sans-serif;
+  line-height: 1.2;
+  margin: 0 0 0.75rem; }
+
+h1 {
+  font-size: 1.776889em; }
+
+h2 {
+  font-size: 1.333em; }
+
+h3 {
+  font-size: 1em; }
+
+h4 {
+  font-size: 0.7501875469em; }
+
+h5 {
+  font-size: 0.5627813555em; }
+
+h6 {
+  font-size: 0.4221915645em; }
+
+nav li, nav button {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .0625rem; }
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  appearance: none;
+  background-color: #e4a811;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: proxima-nova, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 300ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+    background-color: #b6860e;
+    color: #fff; }
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+    button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+      background-color: #e4a811; }
+
+fieldset {
+  background-color: transparent;
+  border: 0;
   margin: 0;
   padding: 0; }
 
-/**
- * Display block as base for these elements
- */
-header, footer, nav, section, article, hgroup, figure {
-  display: block; }
+input {
+  display: block;
+  font-family: proxima-nova, sans-serif;
+  font-size: 1em; }
 
-/*------------------------------------*\
-    #TABLE
-\*------------------------------------*/
-/**
- * Table base styles
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border: 1px solid #808080;
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: 0.375rem; }
+
+[type="file"] {
+  margin-bottom: 0.75rem;
   width: 100%; }
 
-/**
- * Table header base styles
- */
-th {
-  text-align: left;
-  border: 1px solid #808080;
-  padding: 0.2em; }
-
-/**
- * Table cell base styles
- */
-td {
-  border: 1px solid #808080;
-  padding: 0.2em; }
-
-/*------------------------------------*\
-    #TEXT
-\*------------------------------------*/
-/**
- * Paragraph base styles
- */
-p {
-  margin-bottom: 1em; }
-
-/**
- * Blockquote base styles
- */
-blockquote {
-  font-style: italic;
-  border-left: 1px solid #808080;
-  color: #808080;
-  padding-left: 1em;
-  margin-bottom: 1em; }
-
-/**
- * Horizontal rule base styles
- */
-hr {
-  border: 0;
-  height: 2px;
-  background: #d9d9d9;
-  margin: 2em 0; }
-
-/**
- * Abbreviation base styles
- */
-abbr {
-  border-bottom: 1px dotted #808080;
-  cursor: help; }
-
-/*------------------------------------*\
-    $COMPONENTS
-\*------------------------------------*/
-/*------------------------------------*\
-    #BLOCKS
-\*------------------------------------*/
-/**
- * 1) Blocks are collections of text and/or images/media working together as a unit.
- */
-/*------------------------------------*\
-	#HERO BLOCK
-\*------------------------------------*/
-.c-block-hero {
-  display: block;
-  position: relative; }
-
-/**
- * Hero Image
- * 1) This is the primary hero image that runs full-bleed across the layout
- */
-.c-block-hero__img {
-  display: block;
-  width: 100%;
-  max-height: 50vh;
-  object-fit: cover; }
-
-/**
- * Hero Headline
- * 1) This sits overtop of the hero image when space permits
- */
-.c-block-hero__headline {
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 1rem;
-  font-size: 2.6rem;
-  transition: all 0.2s ease; }
-  @media all and (min-width: 50em) {
-    .c-block-hero__headline {
-      position: absolute;
-      top: 3rem;
-      left: 1rem;
-      width: 50%;
-      border-radius: 6px; } }
-  .c-block-hero:hover .c-block-hero__headline, .c-block-hero:focus .c-block-hero__headline {
-    background: #444444; }
-
-/*------------------------------------*\
-	#MEDIA BLOCK
-\*------------------------------------*/
-/**
- * 1) Media block contains an image (or some other media) on the left
- * and text on the right.
- * 2) For more info, read http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
- */
-.c-block-media {
-  display: flex;
-  transition: all 0.2s ease; }
-  .c-block-media:hover .c-block-media__headline, .c-block-media:focus .c-block-media__headline {
-    color: #5C832F; }
-  .c-block-media--small {
-    font-size: 0.875rem; }
-
-/**
- * Media Container
- * 1) This is the container that holds the block image (or media)
- */
-.c-block-media__media {
-  width: 20%;
-  max-width: 11em;
-  margin-right: 1rem; }
-  .c-block-media--small .c-block-media__media {
-    max-width: 3.5em;
-    margin-right: 0.5rem; }
-  @media all and (min-width: 46.8em) {
-    .c-block-media__media {
-      width: 50%;
-      margin-right: 1.5rem; } }
-
-.c-block-media__img {
-  border-radius: 6px; }
-
-.c-block-media__headline {
-  margin-bottom: 0.2em;
-  color: #595959;
-  transition: all 0.2s ease; }
-  .c-block-media--small .c-block-media__headline {
-    font-size: 1rem; }
-
-.c-block-media__body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1; }
-
-.c-block-media__excerpt {
-  color: #a5a5a5;
-  transition: all 0.2s ease; }
-  .c-block-media--small .c-block-media__excerpt {
-    margin-bottom: 0;
-    line-height: 1.2; }
-
-/*------------------------------------*\
-	#TOUT BLOCK
-\*------------------------------------*/
-/**
- * 1) The tout block contains an image and headline overlayed over the image.
- */
-.c-block-tout {
-  display: inline-block;
-  margin-bottom: 0.5em;
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px; }
-
-/**
- *  Tout image
- */
-.c-block-tout__img {
-  display: block; }
-
-/**
- *  Tout headline
- */
-.c-block-tout__headline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 0.5em;
-  font-size: 1.4rem;
-  transition: all 0.2s ease; }
-  .c-block-tout:hover .c-block-tout__headline, .c-block-tout:focus .c-block-tout__headline {
-    padding-bottom: 2rem; }
-
-/*------------------------------------*\
-	#TILE BLOCK
-\*------------------------------------*/
-/**
- * 1) The tile block contains a span and headline overlayed on a background
- */
-.c-block-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border-radius: 6px;
-  padding: 1em 1em;
-  text-align: center;
-  overflow: hidden;
-  transition: all 0.2s ease; }
-  .c-block-tile:hover, .c-block-tile:focus {
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff; }
-  @media all and (min-width: 55rem) {
-    .c-block-tile {
-      padding: 4em 1em; } }
-
-/**
- * Featured tile block
- */
-.c-block-tile--featured {
-  min-height: 200px; }
-
-/**
- * Tile block value
- */
-.c-block-tile__value {
-  font-size: 1.5rem;
-  line-height: 1.2;
-  /**
-   * Tile value when inside featured tile parent selector
-   */ }
-  .c-block-tile--featured .c-block-tile__value {
-    font-size: 2.5rem; }
-    @media all and (min-width: 46.8em) {
-      .c-block-tile--featured .c-block-tile__value {
-        font-size: 5rem; } }
-  @media all and (min-width: 55rem) {
-    .c-block-tile__value {
-      font-size: 3rem; } }
-
-.c-block-tile__label {
-  color: #d9d9d9;
-  font-weight: normal;
-  font-size: 1rem; }
-
-/*------------------------------------*\
-    #BUTTONS
-\*------------------------------------*/
-/**
- * Button
- */
-.c-btn {
-  display: inline-block;
-  background: #3b4a20;
-  color: #fff;
-  line-height: 1;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  border: 0;
-  border-radius: 6px;
-  text-align: center;
-  transition: background 0.2s ease;
-  /**
-   * Disabled button
-   */ }
-  .c-btn:hover, .c-btn:focus {
-    background: #5C832F;
-    color: #fff; }
-  .c-btn.disabled {
-    background: #d9d9d9;
-    color: #808080; }
-
-/**
- * Small button
- */
-.c-btn-small {
-  padding: 0.5em; }
-
-/**
- * Large button
- */
-.c-btn-large {
-  padding: 0.5em;
-  text-transform: uppercase;
-  background: #808080;
-  font-size: 1.4rem;
-  font-weight: normal; }
-
-/**
- * Text button
- */
-.c-text-btn {
-  position: relative;
-  background: none;
-  border: none;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.2rem; }
-  .c-text-btn:after {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    background: url("../../../images/icon-arrowhead.svg") no-repeat;
-    top: 7px;
-    right: -26px;
-    transition: all 0.2s ease; }
-  .c-text-btn:hover, .c-text-btn:focus {
-    color: #444444; }
-    .c-text-btn:hover:after, .c-text-btn:focus:after {
-      right: -28px; }
-  .c-block-media--small .c-text-btn {
-    font-size: 1rem; }
-
-/**
- * Button on overlay
- */
-.c-btn--overlay {
-  background: #a5a5a5; }
-
-/*------------------------------------*\
-    #CAROUSEL
-\*------------------------------------*/
-/**
- * Horizontal carousel
- */
-.carousel-horizontal {
-  margin-bottom: 1em;
-  overflow: hidden;
-  position: relative; }
-
-/**
- * Carousel island container
- */
-.carousel-island-container {
-  overflow: hidden; }
-
-/**
- * Carousel container
- */
-.carousel-container {
-  position: relative; }
-
-/**
- * Carousel list
- */
-/**
- * Carousel controls
- */
-.carousel-controls {
-  display: table;
-  width: 100%;
-  margin: -0.5em 0 1em;
-  /**
-   * Carousel pagination
-   */
-  /**
-   * Carousel next button
-   */ }
-  .carousel-controls a, .carousel-controls div {
-    display: table-cell;
-    padding: 0.5em; }
-  .carousel-controls .carousel-pagination {
-    text-align: center; }
-  .carousel-controls .carousel-next {
-    text-align: right; }
-
-/*------------------------------------*\
-    #FOOTER
-\*------------------------------------*/
-/**
- * Footer
- */
-.c-footer {
-  clear: both;
-  overflow: hidden;
-  background: #3b4a20;
-  color: #fff;
-  line-height: 1.2;
-  padding: 1em 0; }
-
-/**
- * Footer nav
- */
-.c-footer__info {
-  max-width: 40em; }
-  .c-footer__info a {
-    color: #d9d9d9;
-    text-decoration: underline; }
-    .c-footer__info a:hover, .c-footer__info a:focus {
-      text-decoration: none; }
-
-/*------------------------------------*\
-    #FOOTER NAVIGATION
-\*------------------------------------*/
-/**
- * Footer Nav
- */
-.c-footer-nav {
-  display: block;
-  margin-right: 1rem; }
-
-/**
- * Footer Nav List
- */
-.c-footer-nav__list {
-  display: flex;
-  flex-direction: column; }
-  @media all and (min-width: 24em) {
-    .c-footer-nav__list {
-      flex-direction: row; } }
-
-/**
- * Footer Nav List Item
- */
-.c-footer-nav__item {
-  width: 50%; }
-  @media all and (min-width: 24em) {
-    .c-footer-nav__item {
-      width: inherit; } }
-
-/**
- * Footer Nav Links
- */
-.c-footer-nav__link {
-  font-weight: bold;
-  display: block;
-  padding: 1rem 2rem 1rem 0;
-  color: #fff; }
-  .c-footer-nav__link:hover, .c-footer-nav__link:focus {
-    color: #a5a5a5; }
-
-/*------------------------------------*\
-    #FORMS
-\*------------------------------------*/
-/**
- * Search form
- */
-.c-search-form {
-  display: none; }
-  .c-search-form--is-active {
-    display: block;
-    position: absolute;
-    top: 67px;
-    right: 2px;
-    width: 100%;
-    padding: 1em;
-    box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.2);
-    background: #fff;
-    z-index: 1; }
-  @media all and (min-width: 29.75em) {
-    .c-search-form {
-      display: block; } }
-
-/**
- * Search input
- */
-.c-search-form__input {
-  padding: 0.5rem; }
-
-/**
- * Stacked form button wrapper
- */
-.c-form__actions {
-  margin-bottom: 2rem; }
-
-/*------------------------------------*\
-    #FIELDS
-\*------------------------------------*/
-.c-field {
-  margin-bottom: 1rem; }
-
-.c-field__note {
-  font-size: 0.75rem; }
-  .c-field__note a {
-    text-decoration: underline; }
-
-/*------------------------------------*\
-    #HEADER
-\*------------------------------------*/
-/**
- * Header
- */
-.c-header {
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 3px 5px -2px rgba(0, 0, 0, 0.2);
-  padding: 0.5em 0; }
-  @media all and (min-height: 46.8em) {
-    .c-header {
-      padding: 1em 0; } }
-
-/**
- * Header Controls
- * 1) This container holds the primary nav and search menu
- */
-.c-header__controls {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  padding-right: 1rem; }
-
-/**
- * Nav toggle button
- * 1) Styles for the general nav toggle button
- */
-.nav-toggle {
-  display: block;
-  padding: 0.9rem 1rem 0.7rem;
-  font-size: 1.3rem;
-  line-height: 1; }
-  @media all and (min-width: 46.8em) {
-    .nav-toggle {
-      display: none; } }
-  @media all and (max-width: 17em) {
-    .nav-toggle {
-      padding-left: 0.2rem;
-      padding-right: 0.2rem; } }
-
-/**
- * Search nav toggle button
- * 1) Specific nav toggle button for the search form
- */
-.nav-toggle-search {
-  display: block; }
-  @media all and (min-width: 29.75em) {
-    .nav-toggle-search {
-      display: none; } }
-
-/*------------------------------------*\
-    #LOGO
-\*------------------------------------*/
-.c-logo {
-  display: block;
-  max-width: 200px; }
-  .c-box__header .c-logo {
-    max-width: 12em;
-    margin: 0 auto; }
-
-.c-logo-link {
-  display: inline-block;
-  padding: 0.2rem 1rem; }
-
-/*------------------------------------*\
-    #ICONS
-\*------------------------------------*/
-/**
- * Icon fonts
- */
-@font-face {
-  font-family: 'icons';
-  src: url("../fonts/icons.eot");
-  src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-/**
- * Use the following CSS code if you want to use data attributes for inserting your icons
- */
-[data-icon]:before {
-  font-family: 'icons';
-  content: attr(data-icon);
-  speak: none;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased; }
-
-/**
- * Icons and icon pseudo-elements
- */
-.icon-twitter:before, .icon-stumbleupon:before, .icon-pinterest:before, .icon-linkedin:before, .icon-google-plus:before, .icon-search:before, .icon-play:before, .icon-menu:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-bubble:before, .icon-facebook:before, .icon-feed:before, .icon-youtube:before, .icon-tag:before, .icon-tumblr:before, .icon-instagram, .icon-podcast, .icon-apple, .icon-android, .icon-arrow:after, .icon-envelope:before {
-  font-family: 'icons';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased; }
-
-/**
- * Twitter icon
- */
-.icon-twitter:before {
-  content: "\74"; }
-
-/**
- * Stumbleupon icon
- */
-.icon-stumbleupon:before {
-  content: "\75"; }
-
-/**
- * Pinterest icon
- */
-.icon-pinterest:before {
-  content: "\70"; }
-
-/**
- * LinkedIn icon
- */
-.icon-linkedin:before {
-  content: "\69"; }
-
-/**
- * Google plus icon
- */
-.icon-google-plus:before {
-  content: "\67"; }
-
-/**
- * Icon search
- */
-.icon-search:before {
-  content: "\73"; }
-
-/**
- * Play button icon
- */
-.icon-play:before {
-  content: "\61"; }
-
-/**
- * Menu icon
- */
-.icon-menu:before {
-  content: "\21"; }
-
-/**
- * Arrow left icon
- */
-.icon-arrow-left:before {
-  content: "\23"; }
-
-/**
- * Arrow right icon
- */
-.icon-arrow-right:before {
-  content: "\24"; }
-
-/**
- * Bubble icon
- */
-.icon-bubble:before {
-  content: "\25"; }
-
-/**
- * Facebook icon
- */
-.icon-facebook:before {
-  content: "\66"; }
-
-/**
- * Feed icon
- */
-.icon-feed:before {
-  content: "\27"; }
-
-/**
- * YouTube icon
- */
-.icon-youtube:before {
-  content: "\79"; }
-
-/**
- * Tag icon
- */
-.icon-tag:before {
-  content: "\28"; }
-
-/**
- * Tumblr icon
- */
-.icon-tumblr:before {
-  content: "\6d"; }
-
-/**
- * Instagram icon
- */
-.icon-instagram:before {
-  content: "\22"; }
-
-/**
- * Podcast icon
- */
-.icon-podcast:before {
-  content: "\26"; }
-
-/**
- * Android icon
- */
-.icon-android:before {
-  content: "\29"; }
-
-/**
- * Twitter icon
- */
-.icon-apple:before {
-  content: "\2a"; }
-
-/**
- * Envelope icon
- */
-.icon-envelope:before {
-  content: "\2b"; }
-
-/**
- * Arrow icon
- */
-.icon-arrow:after {
-  content: "\61";
-  display: inline-block;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg); }
-
-/**
- * Play icon
- */
-.icon-play:before {
-  font-size: 0.7rem;
-  padding-left: 0.2em; }
-
-/**
- * Play box icon
- */
-.icon-play-box {
-  display: block;
-  margin-left: 2em; }
-
-/**
- * Play box icon before
- */
-.icon-play-box:before {
-  padding: 0.25em;
-  background: #808080;
-  color: #fff;
-  margin-left: -1.7rem;
-  margin-right: 0.5em; }
-
-/*------------------------------------*\
-    #LISTS
-\*------------------------------------*/
-/**
- * Inline list
- */
-.inline-list li {
-  display: inline-block; }
-
-/**
- * Social list
- */
-.social-list li {
-  margin: 0 0.4rem 1em 0; }
-.social-list a {
-  font-size: 1.6em; }
-
-/**
- * Headline list
- */
-.headline-list {
-  margin-bottom: 1em; }
-  .headline-list.flush {
-    margin: 0; }
-  .headline-list h4 {
-    font-weight: normal; }
-  .headline-list li {
-    padding: 0.25em 0;
-    border-top: 1px solid #a5a5a5; }
-
-/**
- * Post list
- */
-.post-list li {
-  margin-bottom: 1em; }
-
-/**
- * Bullet list
- */
-.bullet-list {
-  list-style: square;
-  margin: 0 0 1em 1.2em;
-  line-height: 1.3; }
-  .bullet-list li {
-    margin-bottom: 1em; }
-
-/**
- * Text list
- */
-.text-list {
-  margin: 0 0 1em;
-  line-height: 1.3; }
-  .text-list li {
-    margin-bottom: 1em; }
-
-/**
- * Media List
- */
-.c-media-list__item {
-  margin-bottom: 1.5em; }
-
-/**
- * Tile list
- */
-.c-tile-list {
-  display: flex;
-  flex-direction: column; }
-  @media all and (min-width: 55rem) {
-    .c-tile-list {
-      flex-direction: row;
-      flex-wrap: wrap; } }
-
-/**
- * Tile list item
- */
-.c-tile-list__item {
-  width: 100%;
-  margin-bottom: 1em;
-  position: relative; }
-  .c-tile-list__item:nth-child(2n) {
-    padding-right: 0; }
-  @media all and (min-width: 55rem) {
-    .c-tile-list__item {
-      width: 50%;
-      margin: 0;
-      padding: 0 1em 1em 0; } }
-
-/*------------------------------------*\
-    #MESSAGING
-\*------------------------------------*/
-/**
- * Alert
- */
-.alert {
-  text-align: center;
-  padding: 0 1rem;
-  background: #f7f9f9;
-  overflow: hidden;
-  font-size: 1em;
-  animation: slideDown 2s forwards; }
-  .alert a {
-    color: inherit;
-    text-decoration: underline; }
-
-/**
- * Error alert
- */
-.alert--error {
-  color: #b12a0b;
-  background: #fdded8; }
-
-/**
- * Success alert
- */
-.alert--success {
-  color: #03804d;
-  background: #d4f3e6; }
-
-/**
- * Warning alert
- */
-.alert--warning {
-  color: #a59b15;
-  background: #fffecf; }
-
-/**
- * Info alert
- */
-.alert--info {
-  color: #0192d0;
-  background: #d3f2ff; }
-
-/**
- * Slidedown animation
- */
-@keyframes slideDown {
-  0% {
-    max-height: 0;
-    padding: 0; }
-  100% {
-    padding: 1rem;
-    max-height: 12em; } }
-/**
- * Overlay
- */
-.c-overlay {
-  display: block;
-  padding: 1em;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 6px;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 6px;
-  text-align: center;
-  padding: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; }
-  .c-overlay--is-hidden {
-    display: none; }
-  .c-tile-grid__primary .c-overlay {
-    position: absolute; }
-  .c-tile-list__item .c-overlay {
-    position: absolute; }
-  .c-section .c-overlay {
-    position: absolute; }
-
-/**
-* Overlay Intro
-*/
-.c-overlay__intro {
-  font-size: 1.5rem;
-  color: #fff; }
-
-/*------------------------------------*\
-    #PRIMARY NAVIGATION
-\*------------------------------------*/
-/**
- * Navigation tag
- */
-.c-primary-nav {
-  display: none; }
-  .c-primary-nav--is-active {
-    display: block;
-    position: absolute;
-    padding: 1em 2em;
-    top: 67px;
-    right: 0;
-    box-shadow: -3px 3px 5px -2px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-    background: #fff; }
-  @media all and (min-width: 46.8em) {
-    .c-primary-nav {
-      display: block;
-      margin-right: 1rem; } }
-
-/**
- * Nav List
- */
-.c-primary-nav__list {
-  display: none; }
-  @media all and (min-width: 46.8em) {
-    .c-primary-nav__list {
-      display: flex; } }
-  .c-primary-nav--is-active .c-primary-nav__list {
-    display: block; }
-
-/**
- * Nav Links
- */
-.c-primary-nav__link {
-  font-weight: bold;
-  display: block;
-  padding: 1rem; }
-
-/**
- * Pagination
- */
-.pagination {
-  overflow: hidden; }
-  .pagination li {
-    float: left;
-    border-right: 1px solid #d9d9d9; }
-    .pagination li:last-child {
-      border: 0; }
-  .pagination a {
-    padding: 1em; }
-
-/*------------------------------------*\
-    #PAGE HEADER
-\*------------------------------------*/
-/**
- * 1) The page header contains the page's heading, as perhaps other page information
- *    such as description or actions (edit, delete, etc).
- */
-.c-page-header__title {
-  padding: 1rem 0 0.5rem;
-  position: relative;
-  color: #444444; }
-  .c-page-header__title:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 3rem;
-    height: 0.5rem;
-    bottom: 0;
-    background: #a5a5a5; }
-
-/*------------------------------------*\
-    #SECTIONS
-\*------------------------------------*/
-/**
- * Section
- */
-.c-section {
-  position: relative;
-  margin: 0 0 2em; }
-  @media all and (min-width: 39.8em) {
-    .l-sidebar .c-section {
-      margin-right: 2em;
-      width: 50%; }
-      .l-sidebar .c-section:last-child {
-        margin-right: 0; } }
-  @media all and (min-width: 50em) {
-    .l-sidebar .c-section {
-      width: 100%;
-      margin-right: 0; } }
-
-/**
- * Section title
- */
-.c-section__title {
-  position: relative;
-  color: #444444;
-  margin-bottom: 1.5rem; }
-  .c-section__title:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 2rem;
-    height: 0.3rem;
-    top: 30px;
-    left: 1px;
-    background: #a5a5a5; }
-
-/**
- * Section block
- */
-.c-tile-grid {
-  background: url(../../images/sample/hero-mountains.jpg) no-repeat 50% 50% #444444;
-  background-size: cover; }
-
-.c-tile-grid__inner {
-  display: flex;
-  flex-direction: column; }
-  @media all and (min-width: 46.8em) {
-    .c-tile-grid__inner {
-      flex-direction: row; } }
-
-.c-tile-grid__primary {
-  display: flex;
-  position: relative;
-  width: 100%;
-  margin-bottom: 1rem; }
-  @media all and (min-width: 46.8em) {
-    .c-tile-grid__primary {
-      width: 50%; } }
-  @media all and (min-width: 55rem) {
-    .c-tile-grid__primary {
-      width: 30%; } }
-
-.c-tile-grid__secondary {
-  flex: 1; }
-  @media all and (min-width: 46.8em) {
-    .c-tile-grid__secondary {
-      padding: 0 0 0 1em; } }
-
-/*------------------------------------*\
-    #TEXT
-\*------------------------------------*/
-/**
- * Passages of text
- */
-.text a {
-  text-decoration: underline; }
-.text ul {
-  list-style: disc;
-  margin: 0 0 1em 1.2em; }
-  .text ul ul {
-    margin-bottom: 0; }
-.text ol {
-  list-style: decimal;
-  margin: 0 0 1em 1.5em; }
-  .text ol ol {
-    margin-bottom: 0; }
-
-/**
- * Text passage
- */
-.s-text-passage {
-  margin-bottom: 1rem; }
-
-/**
- * Image within text passage
- */
-.c-text-passage__img {
-  border-radius: 6px;
-  margin-bottom: 1rem; }
-
-/*------------------------------------*\
-    #BOX
-\*------------------------------------*/
-/**
- * 1) This component is a modal-like
- */
-.c-box {
-  border: 1px solid #808080;
-  border-radius: 6px;
-  padding: 2rem;
-  margin: 2rem;
-  align-self: center;
-  justify-content: center;
-  max-width: 32em;
-  margin: 2rem auto; }
-
-.c-box__header {
-  text-align: center;
-  margin-bottom: 2rem; }
-
-/*------------------------------------*\
-    #FEEDBACK
-\*------------------------------------*/
-/**
- * 1) Feedback consists of components that give information back to the user. Examples include progress bars, progress wheels, etc.
- */
-/**
-* Progress bar
-*/
-.c-progress {
-  -webkit-appearance: none;
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
   appearance: none;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  background: #cdcaa2;
-  background-size: auto;
-  width: 100%;
-  max-width: 300px;
-  height: 0.5rem;
-  border-radius: 6px;
-  margin-bottom: 1em; }
+  background-color: #ffffff;
+  border: 0.0625rem solid #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  transition: border-color 300ms ease;
+  width: 100%; }
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover {
+    border-color: #cccccc; }
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus {
+    border-color: #e4a811;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(204, 151, 15, 0.7);
+    outline: none; }
+  input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled {
+    background-color: #f2f2f2;
+    cursor: not-allowed; }
+    input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover {
+      border: 0.0625rem solid #ffffff; }
+  input[type="color"]::placeholder, input[type="date"]::placeholder, input[type="datetime"]::placeholder, input[type="datetime-local"]::placeholder, input[type="email"]::placeholder, input[type="month"]::placeholder, input[type="number"]::placeholder, input[type="password"]::placeholder, input[type="search"]::placeholder, input[type="tel"]::placeholder, input[type="text"]::placeholder, input[type="time"]::placeholder, input[type="url"]::placeholder, input[type="week"]::placeholder, input:not([type])::placeholder, textarea::placeholder {
+    color: #b0afaf; }
 
-.c-progress::-moz-progress-bar {
-  background-color: red;
-  background-image: linear-gradient(to right, red, #f06d06, yellow, green);
-  background-size: 300px 50px;
-  border-radius: 6px; }
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.375rem; }
 
-.c-progress::-webkit-progress-value {
-  background-color: red;
-  background-image: linear-gradient(to right, red, #f06d06, yellow, green);
-  background-size: 300px 50px;
-  border-radius: 6px; }
+legend {
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+  padding: 0; }
 
-progress[value]::-webkit-progress-bar {
-  border-radius: 6px; }
+select {
+  display: block;
+  font-family: proxima-nova, sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75rem;
+  width: 100%; }
 
-.anim::-moz-progress-bar {
-  -moz-transition: width 4s ease; }
+textarea {
+  display: block;
+  font-family: proxima-nova, sans-serif;
+  font-size: 1em;
+  resize: vertical; }
 
-.anim::-webkit-progress-value {
-  -webkit-transition: width 4s ease;
-  -o-transition: width 4s ease;
-  transition: width 4s ease; }
+a {
+  color: #e4a811;
+  text-decoration: none;
+  transition: color 300ms ease; }
+  a:active, a:focus, a:hover {
+    color: #ebbe4d; }
 
-.c-progress.start::-moz-progress-bar {
-  width: 0% !important;
-  background: #cdcaa2 !important; }
+figure {
+  margin: 0; }
 
-.c-progress.start::-webkit-progress-value {
-  width: 0% !important;
-  background: #cdcaa2 !important; }
+img {
+  margin: 0;
+  max-width: 100%; }
 
-/*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-/*------------------------------------*\
-    #LAYOUT
-\*------------------------------------*/
-/**
- * Layout container
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+table {
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  table-layout: fixed;
+  width: 100%; }
+
+td {
+  border-bottom: 0.0625rem solid #ffffff;
+  padding: 0.75rem 0;
+  vertical-align: middle; }
+
+th {
+  border-bottom: 1px solid #bfbfbf;
+  font-weight: 600;
+  padding: 0.75rem 0;
+  text-align: left;
+  vertical-align: middle; }
+
+tr {
+  vertical-align: middle; }
+
+dd {
+  margin: 0; }
+
+dl {
+  margin: 0; }
+
+dt {
+  font-weight: 600;
+  margin: 0; }
+
+hr {
+  border-bottom: 0.0625rem solid #ffffff;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5rem 0; }
+
+p {
+  margin: 0 0 0.75rem; }
+
+/*
+ * --------------------------------
+ * #COMPONENTS
+ * --------------------------------
  */
-.l {
-  max-width: 80em;
-  margin: 0 auto;
-  padding: 1rem; }
-
-/*------------------------------------*\
-    #TEMPLATES
-\*------------------------------------*/
-/**
- * 2 column layout
- */
-.l--two-col {
+.c-nav-flag {
+  background-color: #be9732;
   display: flex;
-  flex-direction: column;
-  /**
-   * Sidebar
-   */ }
-  @media all and (min-width: 50em) {
-    .l--two-col .l-main {
-      width: 70%;
-      padding-right: 1em; } }
-  @media all and (min-width: 39.8em) {
-    .l--two-col .l-sidebar {
-      display: flex; } }
-  @media all and (min-width: 50em) {
-    .l--two-col .l-sidebar {
-      flex-direction: column;
-      width: 30%;
-      padding: 0 0 0 1em; } }
-  @media all and (min-width: 50em) {
-    .l--two-col {
-      flex-direction: row; } }
+  align-items: center;
+  justify-content: space-around;
+  z-index: 10;
+  position: relative; }
+  .c-nav-flag:before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1.875rem;
+    display: block;
+    width: 3.75rem;
+    background: #be9732;
+    transform: skew(45deg); }
 
-/*------------------------------------*\
-    #GRIDS
-\*------------------------------------*/
-/**
- * Grid
+.c-nav-flag__link {
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03125rem; }
+
+.c-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none; }
+
+.c-nav-links__item {
+  padding: .6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03125rem; }
+
+.c-nav-links__anchor {
+  color: #ffffff; }
+
+.c-nav-links__button {
+  background: transparent;
+  padding: .6875rem;
+  border: 0.0625rem solid #ffffff;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03125rem; }
+
+.c-nav-links__icon {
+  color: #ffffff;
+  padding: 1.875rem; }
+
+/*
+ * --------------------------------
+ * #MODULES
+ * --------------------------------
  */
-.g {
-  overflow: hidden;
-  margin: 0 -0.5em; }
-
-/**
- * Grid item
- */
-.gi {
-  padding: 0.5em; }
-  .gi img {
-    display: block; }
-  @media all and (min-width: 46.8em) {
-    .gi {
-      float: left; } }
-
-/**
- * 2 up grid
- */
-@media all and (min-width: 46.8em) {
-  .g-2up > .gi {
-    float: left;
-    width: 50%; }
-    .g-2up > .gi:nth-of-type(odd) {
-      clear: left; } }
-
-/**
- * Grid side by side
- */
-.g-half > .gi {
-  float: left;
-  width: 50%; }
-  .g-half > .gi:nth-of-type(odd) {
-    clear: left; }
-
-/**
- * 3 up grid
- */
-@media all and (min-width: 46.8em) {
-  .g-3up > .gi {
-    float: left;
-    width: 50%; }
-    .g-3up > .gi:nth-of-type(2n+1) {
-      clear: left; } }
-@media all and (min-width: 50em) {
-  .g-3up > .gi {
-    width: 33.3333333%; }
-    .g-3up > .gi:nth-of-type(2n+1) {
-      clear: none; }
-    .g-3up > .gi:nth-of-type(3n+1) {
-      clear: left; } }
-
-/**
- * 4 up grid
- */
-@media all and (min-width: 46.8em) {
-  .g-4up > .gi {
-    float: left;
-    width: 50%; }
-    .g-4up > .gi:nth-of-type(2n+1) {
-      clear: both; } }
-@media all and (min-width: 50em) {
-  .g-4up > .gi {
-    width: 25%; }
-    .g-4up > .gi:nth-of-type(2n+1) {
-      clear: none; }
-    .g-4up > .gi:nth-of-type(4n+1) {
-      clear: left; } }
-
-/**
- * Quarter grid always displayed side by side
- */
-.g-quarter > .gi {
-  float: left;
-  width: 24%; }
-  .g-quarter > .gi:nth-of-type(4n+1) {
-    clear: left; }
-
-/**
- * Grid max 4 up
- */
-@media all and (min-width: 29.75em) {
-  .g-max4 > .gi {
-    float: left;
-    width: 50%; }
-    .g-max4 > .gi:nth-of-type(2n+1) {
-      clear: both; } }
-@media all and (min-width: 39.8em) {
-  .g-max4 > .gi {
-    width: 33.3333333%; }
-    .g-max4 > .gi:nth-of-type(2n+1) {
-      clear: none; }
-    .g-max4 > .gi:nth-of-type(3n+1) {
-      clear: left; } }
-@media all and (min-width: 50em) {
-  .g-max4 > .gi {
-    width: 25%; }
-    .g-max4 > .gi:nth-of-type(3n+1) {
-      clear: none; }
-    .g-max4 > .gi:nth-of-type(4n+1) {
-      clear: left; } }
-
-/**
- * Grid max of 5 up
- */
-.g-max5 > .gi {
-  float: left;
-  width: 50%; }
-  .g-max5 > .gi:nth-of-type(2n+1) {
-    clear: both; }
-@media all and (min-width: 39.8em) {
-  .g-max5 > .gi {
-    width: 33.3333333%; }
-    .g-max5 > .gi:nth-of-type(2n+1) {
-      clear: none; }
-    .g-max5 > .gi:nth-of-type(3n+1) {
-      clear: left; } }
-@media all and (min-width: 46.8em) {
-  .g-max5 > .gi {
-    width: 25%; }
-    .g-max5 > .gi:nth-of-type(3n+1) {
-      clear: none; }
-    .g-max5 > .gi:nth-of-type(4n+1) {
-      clear: left; } }
-@media all and (min-width: 48em) {
-  .g-max5 > .gi {
-    width: 20%; }
-    .g-max5 > .gi:nth-of-type(4n+1) {
-      clear: none; }
-    .g-max5 > .gi:nth-of-type(5n+1) {
-      clear: left; } }
-
-/*# sourceMappingURL=style.css.map */
+/*
+  * --------------------------------
+  * #TRUMPS
+  * --------------------------------
+  */

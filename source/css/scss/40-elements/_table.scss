@@ -1,0 +1,77 @@
+// The HTML <caption> element represents the title of a table. Though it is 
+// always the first descendant of a <table>, its styling, using CSS, may place 
+// it elsewhere, relative to the table.
+
+// caption {}
+
+
+// The HTML <col> element defines a column within a table and is used for 
+// defining common semantics on all common cells. It is generally found within 
+// a <colgroup> element.
+
+// col {}
+
+
+// The HTML <colgroup> element defines a group of columns within a table.
+
+// colgroup {}
+
+
+// The HTML <table> element represents tabular data —that is, information 
+// expressed via a two-dimensional data table.
+
+table {
+  border-collapse: collapse;
+  margin: $small-spacing 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+
+// The HTML <tbody> element groups one or more <tr> elements as the body of a 
+// <table> element.
+
+// tbody {}
+
+
+// The HTML <td> element defines a cell of a table that contains data. It 
+// participates in the table model.
+
+td {
+  border-bottom: $base-border;
+  padding: $small-spacing 0;
+  vertical-align: middle;
+}
+
+
+// The HTML <tfoot> element defines a set of rows summarizing the columns of 
+// the table.
+
+// tfoot {}
+
+
+// The HTML <th> element defines a cell as header of a group of table cells. 
+// The exact nature of this group is defined by the scope and headers 
+// attributes.
+
+th {
+  border-bottom: 1px solid shade($base-border-color, 25%);
+  font-weight: 600;
+  padding: $small-spacing 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+
+// The HTML <thead> element defines a set of rows defining the head of the 
+// columns of the table.
+
+// thead {}
+
+
+// The HTML <tr> element defines a row of cells in a table. Those can be a mix 
+// of <td> and <th> elements.
+
+tr {
+  vertical-align: middle;
+}

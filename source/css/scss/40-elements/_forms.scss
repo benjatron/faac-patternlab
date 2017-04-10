@@ -1,0 +1,191 @@
+// The HTML <button> element represents a clickable button.
+#{$all-buttons} {
+  appearance: none;
+  background-color: $action-color;
+  border: 0;
+  border-radius: $base-border-radius;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: $small-spacing $base-spacing;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover,
+  &:focus {
+    background-color: shade($action-color, 20%);
+    color: #fff;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+}
+
+
+// The HTML <datalist> element contains a set of <option> elements that 
+// represent the values available for other controls.
+
+// datalist {}
+
+
+// The HTML <fieldset> element is used to group several controls as well as 
+// labels (<label>) within a web form.
+
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+//  The HTML <form> element represents a document section that contains 
+// interactive controls to submit information to a web server.
+
+// form {}
+
+
+// The HTML <input> element is used to create interactive controls for 
+// web-based forms in order to accept data from the user. How an <input> works 
+// varies considerably depending on the value of its type attribute.
+
+input {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+}
+
+[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+#{$all-text-inputs} {
+  appearance: none;
+  background-color: $base-background-color;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  box-shadow: $form-box-shadow;
+  box-sizing: border-box;
+  margin-bottom: $small-spacing;
+  padding: $base-spacing / 3;
+  transition: border-color $base-duration $base-timing;
+  width: 100%;
+
+  &:hover {
+    border-color: shade($base-border-color, 20%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $form-box-shadow-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: shade($base-background-color, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+
+  &::placeholder {
+    color: tint($base-font-color, 40%);
+  }
+}
+
+
+// The HTML <label> element represents a caption for an item in a user 
+// interface.
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+}
+
+
+// The HTML <legend> element represents a caption for the content of its 
+// parent <fieldset>.
+
+legend {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+
+// The HTML <meter> element represents either a scalar value within a known 
+// range or a fractional value.
+
+// meter {}
+
+
+// The HTML <optgroup> element creates a grouping of options within a <select> 
+// element.
+
+// optgroup {}
+
+
+//  The HTML <option> element is used to create a control representing an item 
+// within a <select>, an <optgroup> or a <datalist> HTML5 element.
+
+// option {}
+
+
+// The HTML <output> element represents the result of a calculation or user 
+// action.
+
+// output {}
+
+
+// The HTML <progress> element represents the completion progress of a task, 
+// typically displayed as a progress bar.
+
+// progress {}
+
+
+// The HTML <select> element represents a control that provides a menu of 
+// options.
+
+select {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+
+//  The HTML <textarea> element represents a multi-line plain-text editing 
+// control.
+
+textarea {
+  display: block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  resize: vertical;
+}

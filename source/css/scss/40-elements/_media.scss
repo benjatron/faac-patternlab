@@ -1,0 +1,51 @@
+//  The HTML <area> element defines a hot-spot region on an image, and 
+// optionally associates it with a hypertext link. This element is used only 
+// within a <map> element.
+
+// area {}
+
+
+// The HTML <audio> element is used to embed sound content in documents. It 
+// may contain one or more audio sources, represented using the src attribute 
+// or the <source> element; the browser will choose the most suitable one.
+
+// audio {}
+
+
+// The HTML <figure> element represents self-contained content, frequently
+// with a caption (<figcaption>), and is typically referenced as a single unit.
+
+figure {
+  margin: 0;
+}
+
+
+// The HTML <img> element represents an image in the document.
+
+img {
+  margin: 0;
+  max-width: 100%;
+}
+
+
+// The HTML <map> element is used with <area> elements to define an image map 
+// (a clickable link area).
+
+// map {}
+
+
+// The HTML <picture> element is a container used to specify multiple <source> 
+// elements for a specific <img> contained in it. The browser will choose the 
+// most suitable source according to the current layout of the page (the 
+// constraints of the box the image will appear in) and the device it will be 
+// displayed on (e.g. a normal or hiDPI device.)
+
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+
+// Use the HTML <video> element to embed video content in a document.
+
+// video {}
